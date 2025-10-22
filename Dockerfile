@@ -2,18 +2,6 @@ FROM slskd/slskd:0.23.2
 
 RUN apt update
 
-# Install OpenVPN
-RUN apt install -y openvpn
-
-# Install unzip
-RUN apt install -y unzip
-
-WORKDIR /etc/openvpn
-
-RUN wget https://downloads.nordcdn.com/configs/archives/servers/ovpn.zip && \
-    unzip ovpn.zip && \
-    rm ovpn.zip
-
 # Install clamav
 RUN apt install clamav clamav-daemon -y
 
