@@ -22,10 +22,10 @@ integration:
     scan_downloaded_file:
       on:
         - DownloadDirectoryComplete
-      run: /bin/sh /scan_file "dest_directory_path" $DATA
+      run:
+        executable: /bin/sh
+        args: '-c "/scan_file {dest_directory_path} $SLSKD_SCRIPT_DATA"'
 ```
-
-Note: It is important to not double quote `$DATA`.
 
 ### Run the container
 
