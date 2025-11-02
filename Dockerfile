@@ -8,6 +8,9 @@ RUN apt install clamav clamav-daemon -y
 # Install ssmtp and mailutils
 RUN apt install ssmtp mailutils -y
 
+# Install jq
+RUN apt install jq -y
+
 COPY files/scan_file /scan_file
 RUN chmod +x /scan_file
 

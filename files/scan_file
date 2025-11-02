@@ -11,7 +11,7 @@ quarantine_dir="${QUARANTINE_DIR}"
 mkdir -p "${logs_dir}"
 mkdir -p "${quarantine_dir}"
 
-file_to_scan_path="$(echo "${slskd_data}" | sed -n 's/^.*localDirectoryName:\(.*\),remoteDirectoryName.*$/\1/p')"
+file_to_scan_path="$(jq -r '.localDirectoryName' <<< "${slskd_data}")"
 file_to_scan_name="$(basename "${file_to_scan_path}")"
 log_file="${logs_dir}/${file_to_scan_name}_scan.log"
 
