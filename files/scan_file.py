@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import json
 import os
 import subprocess
 
-logs_dir = "./log"
+logs_dir = os.environ["SLSKD_LOGS_DIR"]
 email_address = os.environ["DEST_EMAIL_ADDRESS"]
 completed_dir = os.environ["SLSKD_DOWNLOADS_DIR"]
 quarantine_dir = os.environ["QUARANTINE_DIR"]
