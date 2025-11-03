@@ -8,8 +8,11 @@ RUN apt install clamav clamav-daemon -y
 # Install ssmtp and mailutils
 RUN apt install ssmtp mailutils -y
 
-COPY files/scan_file /scan_file
-RUN chmod +x /scan_file
+# Install python3
+RUN apt install python3 -y
+
+COPY files/scan_file.py /scan_file.py
+RUN chmod +x /scan_file.py
 
 COPY files/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

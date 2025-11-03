@@ -24,7 +24,7 @@ integration:
         - DownloadDirectoryComplete
       run:
         executable: /bin/sh
-        args: '-c "/scan_file {dest_directory_path} $SLSKD_SCRIPT_DATA"'
+        args: '-c "/scan_file.py"'
 ```
 
 ### Run the container
