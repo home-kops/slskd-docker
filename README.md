@@ -23,8 +23,7 @@ integration:
       on:
         - DownloadDirectoryComplete
       run:
-        executable: /bin/sh
-        args: '-c "/scan_file.py"'
+        executable: /scan_file.py
 ```
 
 ### Run the container
@@ -38,6 +37,7 @@ sudo nerdctl run -d --name slskd -p 8080:5030 \
     -e ORIGIN_EMAIL_AUTHPASS="[REDACTED]" \
     -e SLSKD_NO_AUTH="true" \
     -e SLSKD_APP_DIR="/config/slskd" \
+    -e SLSKD_LOGS_DIR="/var/log/slskd" \
     -e SLSKD_REMOTE_CONFIGURATION="true" \
     -e QUARANTINE_DIR="/quarantine" \
     msd117/slskd:latest
