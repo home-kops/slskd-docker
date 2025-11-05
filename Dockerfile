@@ -1,4 +1,4 @@
-FROM slskd/slskd:0.23.2
+FROM slskd/slskd:0.24.0
 
 RUN apt update
 
